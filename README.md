@@ -44,8 +44,7 @@ Yields 1 Interdiction Torch. The cluster occupies the top slot, the two sticks a
 ## Building from source
 
 ```powershell
-# Requires JDK 25
-$env:JAVA_HOME='C:\Path\temurin25-jdk-25.0.5+8'
+# Requires JDK 25; set JAVA_HOME to your JDK installation first
 .\gradlew build
 ```
 
@@ -93,6 +92,7 @@ from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
 
 
 

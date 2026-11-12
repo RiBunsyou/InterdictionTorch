@@ -44,8 +44,7 @@
 ## 从源码构建
 
 ```powershell
-# 需要 JDK 25
-$env:JAVA_HOME='C:\Path\temurin25-jdk-25.0.5+8'
+# 需要 JDK 25，先把 JAVA_HOME 指向你的 JDK 安装目录
 .\gradlew build
 ```
 
@@ -92,6 +91,7 @@ Minecraft 26.1 起官方发行版不再混淆，Fabric 同时停止维护 Yarn �
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
 
 
 
