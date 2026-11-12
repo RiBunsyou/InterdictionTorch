@@ -8,15 +8,13 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 
 /**
- * 自定义粒子类型。和原版火焰粒子的区别：紫色烟雾、向上飘、逐渐淡出。
- *
- * 注意：SimpleParticleType 的构造器是 protected，只能靠子类来 new。
+ * 粒子类型注册。
  */
 public final class ModParticles {
 	private ModParticles() {
 	}
 
-	/** 仅用于绕过 protected 构造器。 */
+	/** SimpleParticleType 的构造器为 protected，通过子类实例化。 */
 	private static final class FlameType extends SimpleParticleType {
 		private FlameType() {
 			super(false);
@@ -31,7 +29,7 @@ public final class ModParticles {
 			INTERDICTION_FLAME_KEY,
 			new FlameType());
 
+	/** 触发类初始化。 */
 	public static void initialize() {
-		// 触发静态初始化
 	}
 }

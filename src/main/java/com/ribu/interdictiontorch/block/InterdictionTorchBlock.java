@@ -16,8 +16,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * 立在地上的禁止火把。
- * 方块行为完全继承原版 TorchBlock，只额外挂了一个力场 BlockEntity。
+ * 落地形态的禁止火把。
+ *
+ * 碰撞箱、支撑判定与放置逻辑继承自 TorchBlock，另挂载力场方块实体。
  */
 public class InterdictionTorchBlock extends TorchBlock implements EntityBlock {
 	public InterdictionTorchBlock(SimpleParticleType flameParticle, BlockBehaviour.Properties properties) {
@@ -25,9 +26,9 @@ public class InterdictionTorchBlock extends TorchBlock implements EntityBlock {
 	}
 
 	/**
-	 * 与原版 TorchBlock.animateTick 逐行一致：
-	 * 位置 (x+0.5, y+0.7, z+0.5)，速度全 0，每 tick 一颗烟雾 + 一颗火焰。
-	 * 唯一的区别是火焰粒子换成了自定义的紫色类型。
+	 * 在把头顶端生成烟雾与火焰粒子。
+	 *
+	 * 生成位置为方块中心、高度 0.7，速度为零，与原版 TorchBlock.animateTick 相同。
 	 */
 	@Override
 	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
@@ -44,6 +45,7 @@ public class InterdictionTorchBlock extends TorchBlock implements EntityBlock {
 		return new InterdictionTorchBlockEntity(pos, state);
 	}
 
+	/** 仅在逻辑侧返回 ticker，客户端返回 null。 */
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
 		return level.isClientSide() ? null : ModBlockEntities.ticker();

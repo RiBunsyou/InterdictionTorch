@@ -17,8 +17,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * 贴在墙上的禁止火把。
- * 朝向、贴墙判定、碰撞箱全部继承原版 WallTorchBlock。
+ * 贴墙形态的禁止火把。
+ *
+ * 朝向、贴墙判定与碰撞箱继承自 WallTorchBlock，另挂载力场方块实体。
  */
 public class InterdictionWallTorchBlock extends WallTorchBlock implements EntityBlock {
 	public InterdictionWallTorchBlock(SimpleParticleType flameParticle, BlockBehaviour.Properties properties) {
@@ -26,8 +27,10 @@ public class InterdictionWallTorchBlock extends WallTorchBlock implements Entity
 	}
 
 	/**
-	 * 与原版 WallTorchBlock.animateTick 逐行一致：
-	 * 沿朝向反方向偏移 0.27，高度 +0.7 再 +0.22，速度全 0。
+	 * 在把头顶端生成烟雾与火焰粒子。
+	 *
+	 * 水平方向沿朝向反方向偏移 0.27，高度偏移 0.7 与 0.22，速度为零，
+	 * 与原版 WallTorchBlock.animateTick 相同。
 	 */
 	@Override
 	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
@@ -46,6 +49,7 @@ public class InterdictionWallTorchBlock extends WallTorchBlock implements Entity
 		return new InterdictionTorchBlockEntity(pos, state);
 	}
 
+	/** 仅在逻辑侧返回 ticker，客户端返回 null。 */
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
 		return level.isClientSide() ? null : ModBlockEntities.ticker();

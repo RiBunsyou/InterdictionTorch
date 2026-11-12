@@ -14,13 +14,9 @@ import net.minecraft.util.RandomSource;
 /**
  * 禁止火把的火焰粒子。
  *
- * 实现方式和原版 FlameParticle 完全一致：
- * - 继承 RisingParticle，拿到原版的摩擦、速度衰减、位置抖动、寿命随机
- * - 覆写 move()：只平移包围盒，不做碰撞
- * - 覆写 getQuadSize()：随寿命二次缩小到一半
- * - 覆写 getLightCoords()：叠加方块发光
- * - 层用 OPAQUE
- * 唯一区别是贴图颜色（紫色）和注册的粒子类型。
+ * 继承自 RisingParticle，摩擦、速度衰减、位置抖动与寿命随机均由父类提供。
+ * 覆写内容与原版 FlameParticle 相同：无碰撞移动、随寿命二次缩小、随寿命发光、OPAQUE 渲染层。
+ * 差异仅为贴图颜色与注册的粒子类型。
  */
 public class InterdictionFlameParticle extends RisingParticle {
 	protected InterdictionFlameParticle(ClientLevel level, double x, double y, double z,
@@ -28,20 +24,21 @@ public class InterdictionFlameParticle extends RisingParticle {
 		super(level, x, y, z, vx, vy, vz, sprite);
 	}
 
-	/** 原版的关键：不做碰撞，粒子不会被火把的碰撞箱挤出去。 */
+	/** 只平移包围盒，跳过方块碰撞检测。 */
 	@Override
 	public void move(double x, double y, double z) {
 		this.setBoundingBox(this.getBoundingBox().move(x, y, z));
 		this.setLocationFromBoundingbox();
 	}
 
+	/** 随寿命按二次曲线缩小，结束时为初始大小的一半。 */
 	@Override
 	public float getQuadSize(float partialTick) {
 		float progress = (this.age + partialTick) / (float) this.lifetime;
 		return this.quadSize * (1.0f - progress * progress * 0.5f);
 	}
 
-	/** 和原版一样随寿命发光，暗处也能看见。 */
+	/** 随寿命叠加方块发光。 */
 	@Override
 	public int getLightCoords(float partialTick) {
 		return LightCoordsUtil.addSmoothBlockEmission(

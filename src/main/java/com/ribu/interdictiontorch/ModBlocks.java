@@ -12,13 +12,10 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 
 /**
- * 方块注册表。
+ * 方块注册。
  *
- * 属性链与原版 Blocks.TORCH / WALL_TORCH 逐项一致：
- *   of().noCollision().instabreak().lightLevel(s -> 14).sound(WOOD).pushReaction(POPPED)
- *
- * 墙面款还额外套用了原版的 wallVariant()：
- *   复用地面款的战利品表 + 复用地面款的翻译键
+ * 两个方块的属性与原版火把相同：无碰撞、瞬间破坏、光照等级 14、木质音效、被推动时破坏。
+ * 墙面款复用落地款的战利品表与翻译键（对应原版 wallVariant）。
  */
 public final class ModBlocks {
 	private ModBlocks() {
@@ -29,7 +26,7 @@ public final class ModBlocks {
 	public static final ResourceKey<Block> INTERDICTION_WALL_TORCH_KEY =
 			ResourceKey.create(Registries.BLOCK, InterdictionTorch.id("interdiction_wall_torch"));
 
-	/** 立在地上的禁止火把，属性与原版火把完全相同。 */
+	/** 落地形态的禁止火把。 */
 	public static final Block INTERDICTION_TORCH = Registry.register(
 			BuiltInRegistries.BLOCK,
 			INTERDICTION_TORCH_KEY,
@@ -43,7 +40,7 @@ public final class ModBlocks {
 							.sound(SoundType.WOOD)
 							.pushReaction(PushReaction.POPPED)));
 
-	/** 贴在墙上的禁止火把，等价于原版的 wallVariant(TORCH, true)。 */
+	/** 贴墙形态的禁止火把，掉落物与名称继承落地款。 */
 	public static final Block INTERDICTION_WALL_TORCH = Registry.register(
 			BuiltInRegistries.BLOCK,
 			INTERDICTION_WALL_TORCH_KEY,
@@ -59,7 +56,7 @@ public final class ModBlocks {
 							.sound(SoundType.WOOD)
 							.pushReaction(PushReaction.POPPED)));
 
+	/** 触发类初始化。 */
 	public static void initialize() {
-		// 触发静态初始化
 	}
 }

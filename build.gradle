@@ -3,7 +3,7 @@ plugins {
 }
 
 loom {
-	// 客户端/服务端代码分离：以后加粒子、渲染相关代码时放进 src/client
+	// 分离客户端与服务端源码集，客户端代码位于 src/client
 	splitEnvironmentSourceSets()
 
 	mods {
@@ -15,7 +15,7 @@ loom {
 }
 
 repositories {
-	// Loom 会自动加好 Minecraft 和依赖所需的仓库，这里只在需要额外依赖时使用
+	// Loom 已配置 Minecraft 与依赖仓库，此处用于声明额外依赖源
 }
 
 dependencies {
@@ -24,7 +24,7 @@ dependencies {
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
-// 配置缓存要求：闭包里不能直接引用 project，先取出来
+// 配置缓存不允许在闭包内引用 project，先取局部变量
 def modVersion = project.version
 
 processResources {

@@ -12,9 +12,9 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import java.util.Set;
 
 /**
- * 方块实体注册表。
+ * 方块实体类型注册。
  *
- * 26.x 的 BlockEntityType 没有 Builder 了，直接 new + 传入支持的方块集合。
+ * BlockEntityType 由构造器创建，接收方块实体工厂和可挂载的方块集合。
  */
 public final class ModBlockEntities {
 	private ModBlockEntities() {
@@ -31,7 +31,7 @@ public final class ModBlockEntities {
 							InterdictionTorchBlockEntity::new,
 							Set.of(ModBlocks.INTERDICTION_TORCH, ModBlocks.INTERDICTION_WALL_TORCH)));
 
-	/** 给方块用的 ticker，只在逻辑侧（单人里的集成服务器）跑。 */
+	/** 返回力场使用的 ticker。 */
 	public static <T extends BlockEntity> BlockEntityTicker<T> ticker() {
 		return (level, pos, state, blockEntity) -> {
 			if (blockEntity instanceof InterdictionTorchBlockEntity torch) {
@@ -40,7 +40,7 @@ public final class ModBlockEntities {
 		};
 	}
 
+	/** 触发类初始化。 */
 	public static void initialize() {
-		// 触发静态初始化
 	}
 }

@@ -12,7 +12,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 
 /**
- * 物品注册表。只有一件物品：放地上是火把，点墙上是墙上的火把。
+ * 物品注册。
+ *
+ * 物品为 StandingAndWallBlockItem：点击地面放置落地款，点击墙面放置贴墙款。
  */
 public final class ModItems {
 	private ModItems() {
@@ -29,11 +31,9 @@ public final class ModItems {
 					new Item.Properties().setId(INTERDICTION_TORCH_KEY)));
 
 	/**
-	 * 和原版 Items.registerBlock 一样的注册流程。
+	 * 注册物品。
 	 *
-	 * 关键在 registerBlocks：它把方块写进 Item.BY_BLOCK 映射，
-	 * 展示框/物品实体等地方会通过 Block.byItem 反查方块并改用 3D 方块模型。
-	 * 少了这一步，物品只会用平面的 item 模型，展示框里就会是"一张纸片"。
+	 * 方块物品会先把方块写入 Item.BY_BLOCK 映射，展示框与物品实体据此选择方块模型。
 	 */
 	private static Item register(ResourceKey<Item> key, Item item) {
 		if (item instanceof BlockItem blockItem) {
@@ -43,6 +43,7 @@ public final class ModItems {
 		return Registry.register(BuiltInRegistries.ITEM, key, item);
 	}
 
+	/** 将物品加入创造模式物品栏。 */
 	public static void initialize() {
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)
 				.register(output -> output.accept(INTERDICTION_TORCH));
