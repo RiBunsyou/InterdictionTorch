@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": "minecraft:diamond",
+    "G": "minecraft:glowstone_dust",
+    "R": "minecraft:redstone_torch"
+  },
+  "pattern": [
+    "RDR",
+    "D D",
+    "GGG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "interdictiontorch:interdiction_torch"
+  }
+}

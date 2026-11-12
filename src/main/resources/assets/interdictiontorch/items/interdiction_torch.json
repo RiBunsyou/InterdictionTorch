@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "interdictiontorch:item/interdiction_torch"
+  }
+}
