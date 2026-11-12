@@ -105,5 +105,7 @@ public class InterdictionTorchBlockEntity extends BlockEntity {
 
 		Vec3 reflected = motion.subtract(normal.scale(2.0 * approach)).scale(0.6);
 		projectile.setDeltaMovement(reflected);
+		// setDeltaMovement 只改服务端数值，不会触发速度同步包，必须手动标记
+		projectile.needsSync = true;
 	}
 }
