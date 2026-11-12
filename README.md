@@ -10,7 +10,7 @@ A Fabric port of the Interdiction Torch from Equivalent Exchange. Creates a forc
 
 - Two forms, floor and wall mounted, placed by a single item
 - Light level 14
-- Force field with an 8 block radius; push strength decreases with distance and stacks across torches
+- Force field with a 12 block radius; push strength decreases with distance and stacks across torches
 - Projectiles approaching the torch are reflected
 - Custom violet flame particle; spawn position, motion and scaling follow vanilla `FlameParticle`
 
@@ -93,5 +93,6 @@ from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
 
 
