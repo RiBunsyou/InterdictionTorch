@@ -85,6 +85,11 @@ Minecraft 26.1 起官方发行版不再混淆，Fabric 同时停止维护 Yarn �
 战利品表、`wall_post_override` 与 `washed_away_by_fluids` 标签，以及 `animateTick`
 中的粒子生成位置与速度。
 
+## 内置资源包
+
+模组内置一套可选的 128× 贴图包，默认关闭，可在资源包界面启用。启用后提供漫反射、法线与 LabPBR 高光贴图。
+
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+

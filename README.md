@@ -85,6 +85,12 @@ The following block and item behaviour matches the vanilla torch: collision shap
 light level, sound, piston and fluid reactions, loot tables, the `wall_post_override` and
 `washed_away_by_fluids` tags, and the particle spawn position and velocity in `animateTick`.
 
+## Built-in resource pack
+
+The mod ships an optional 128x texture pack as a built-in pack. It is disabled by default and can be enabled
+from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
