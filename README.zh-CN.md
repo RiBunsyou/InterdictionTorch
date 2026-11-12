@@ -1,4 +1,4 @@
-# 禁止火把 (Interdiction Torch)
+# 禁止火把 · 独立版 (Interdiction Torch Standalone)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -92,6 +92,7 @@ Minecraft 26.1 起官方发行版不再混淆，Fabric 同时停止维护 Yarn �
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
 
 
 

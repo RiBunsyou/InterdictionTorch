@@ -1,4 +1,4 @@
-# Interdiction Torch (禁止火把)
+# Interdiction Torch Standalone (禁止火把)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -93,6 +93,7 @@ from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
 
 
 

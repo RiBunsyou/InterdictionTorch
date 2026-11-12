@@ -9,4 +9,5 @@ pluginManagement {
 	}
 }
 
-rootProject.name = 'InterdictionTorch'
+rootProject.name = 'InterdictionTorchStandalone'
+
