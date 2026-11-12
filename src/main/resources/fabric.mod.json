@@ -8,8 +8,8 @@
 		"RiBunsyou"
 	],
 	"contact": {
-		"homepage": "https://github.com/RiBunsyou/InterdictionTorch",
-		"sources": "https://github.com/RiBunsyou/InterdictionTorch"
+		"homepage": "https://github.com/RiBunsyou/InterdictionTorchStandalone",
+		"sources": "https://github.com/RiBunsyou/InterdictionTorchStandalone"
 	},
 	"license": "MIT",
 	"icon": "assets/interdictiontorch/icon.png",
@@ -29,5 +29,6 @@
 		"fabric-api": "*"
 	}
 }
+
 
 
