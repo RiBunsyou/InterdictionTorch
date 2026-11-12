@@ -1,91 +1,95 @@
-# 禁止火把 (Interdiction Torch)
+# Interdiction Torch (禁止火把)
 
-《等价交换》中禁止火把的 Fabric 26.3 移植版本。
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-火把放置后生成力场，将敌对生物推出范围并偏转靠近的弹射物。照明等级为 14，与原版火把相同。
-火把的方块行为与粒子逻辑沿用原版实现，贴图配色改为紫黑把手与紫色火焰。
+A Fabric 26.3 port of the Interdiction Torch from *Equivalent Exchange*.
 
-![贴图预览](docs/preview.png)
+When placed, the torch creates a force field that pushes hostile mobs out of range and deflects
+incoming projectiles. Its light level is 14, identical to the vanilla torch. Block behaviour and
+particle logic follow the vanilla implementation; only the colours change to a dark purple handle
+and a violet flame.
 
-## 特性
+![Texture preview](docs/preview.png)
 
-- 落地与贴墙两种形态，由一个物品放置
-- 光照等级 14
-- 力场半径为 8 格，推力随距离递减，多根火把的推力按矢量叠加
-- 靠近火把的弹射物被反射
-- 自定义紫色火焰粒子，生成位置、运动与缩放沿用原版 `FlameParticle`
+## Features
 
-力场作用于敌对生物，玩家与友好生物不受影响。
+- Two forms, floor and wall mounted, placed by a single item
+- Light level 14
+- Force field with an 8 block radius; push strength decreases with distance and stacks across torches
+- Projectiles approaching the torch are reflected
+- Custom violet flame particle; spawn position, motion and scaling follow vanilla `FlameParticle`
 
-## 环境要求
+The force field affects hostile mobs only. Players and passive mobs are unaffected.
 
-| 项目 | 版本 |
+## Requirements
+
+| Component | Version |
 | --- | --- |
 | Minecraft | 26.3 |
-| Fabric Loader | 0.20.1 或更高 |
-| Fabric API | 0.165.2+26.3 或更高 |
+| Fabric Loader | 0.20.1 or later |
+| Fabric API | 0.165.2+26.3 or later |
 | Java | 25 |
 
-## 安装
+## Installation
 
-1. 安装 Fabric Loader（26.3）
-2. 将 Fabric API 与本模组的 jar 放入 `mods/` 目录
-3. 启动游戏
+1. Install Fabric Loader for 26.3
+2. Place Fabric API and this mod's jar into `mods/`
+3. Start the game
 
-## 合成
+## Recipe
 
 ```
-R D R      R = 红石火把
-D   D      D = 钻石
-G G G      G = 荧石粉
+R D R      R = Redstone Torch
+D   D      D = Diamond
+G G G      G = Glowstone Dust
 ```
 
-产出 1 个禁止火把。合成表中心为空，原版配方在此位置使用贤者之石。
+Yields 1 Interdiction Torch. The centre slot is empty; the original recipe uses a Philosopher's Stone there.
 
-## 从源码构建
+## Building from source
 
 ```powershell
-# 需要 JDK 25
+# Requires JDK 25
 $env:JAVA_HOME='C:\Path\temurin25-jdk-25.0.5+8'
 .\gradlew build
 ```
 
-产物位于 `build/libs/InterdictionTorch-<version>.jar`。
+The artifact is written to `build/libs/InterdictionTorch-<version>.jar`.
 
-开发环境客户端：
+Development client:
 
 ```powershell
 .\gradlew runClient
 ```
 
-## 项目结构
+## Project layout
 
 ```
 src/main/java/com/ribu/interdictiontorch/
-├── InterdictionTorch.java            主入口
-├── ModBlocks.java                    方块注册
-├── ModBlockEntities.java             方块实体注册
-├── ModItems.java                     物品注册
-├── ModParticles.java                 粒子类型注册
+├── InterdictionTorch.java            Mod entrypoint
+├── ModBlocks.java                    Block registration
+├── ModBlockEntities.java             Block entity type registration
+├── ModItems.java                     Item registration
+├── ModParticles.java                 Particle type registration
 └── block/
-    ├── InterdictionTorchBlock.java           落地火把
-    ├── InterdictionWallTorchBlock.java       贴墙火把
-    └── InterdictionTorchBlockEntity.java     力场逻辑
+    ├── InterdictionTorchBlock.java           Floor torch
+    ├── InterdictionWallTorchBlock.java       Wall torch
+    └── InterdictionTorchBlockEntity.java     Force field logic
 
 src/client/java/com/ribu/interdictiontorch/client/
-├── InterdictionTorchClient.java      客户端入口
+├── InterdictionTorchClient.java      Client entrypoint
 └── particle/InterdictionFlameParticle.java
 ```
 
-## 实现说明
+## Implementation notes
 
-Minecraft 26.1 起官方发行版不再混淆，Fabric 同时停止维护 Yarn 映射，因此本项目使用 Mojang
-官方类名（例如 `TorchBlock`、`Item.Properties`）。
+Since Minecraft 26.1 the official distribution is unobfuscated, and Fabric has stopped maintaining
+Yarn mappings, so this project uses Mojang class names such as `TorchBlock` and `Item.Properties`.
 
-方块与物品的以下行为与原版火把一致：碰撞箱、支撑判定、光照、音效、活塞与水流的反应、
-战利品表、`wall_post_override` 与 `washed_away_by_fluids` 标签，以及 `animateTick`
-中的粒子生成位置与速度。
+The following block and item behaviour matches the vanilla torch: collision shape, support checks,
+light level, sound, piston and fluid reactions, loot tables, the `wall_post_override` and
+`washed_away_by_fluids` tags, and the particle spawn position and velocity in `animateTick`.
 
-## 许可
+## License
 
-MIT，见 [LICENSE](LICENSE)。
+MIT, see [LICENSE](LICENSE).

@@ -8,8 +8,8 @@
 		"Ri_Bu"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": ""
+		"homepage": "https://github.com/RiBunsyou/InterdictionTorch",
+		"sources": "https://github.com/RiBunsyou/InterdictionTorch"
 	},
 	"license": "MIT",
 	"icon": "assets/interdictiontorch/icon.png",
