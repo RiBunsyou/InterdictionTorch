@@ -2,12 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A Fabric 26.3 port of the Interdiction Torch from *Equivalent Exchange*.
-
-When placed, the torch creates a force field that pushes hostile mobs out of range and deflects
-incoming projectiles. Its light level is 14, identical to the vanilla torch. Block behaviour and
-particle logic follow the vanilla implementation; only the colours change to a dark purple handle
-and a violet flame.
+A Fabric port of the Interdiction Torch from Equivalent Exchange. Creates a force field that pushes hostile mobs away and deflects projectiles.
 
 ![Texture preview](docs/preview.png)
 
