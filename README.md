@@ -34,12 +34,12 @@ The force field affects hostile mobs only. Players and passive mobs are unaffect
 ## Recipe
 
 ```
-R D R      R = Redstone Torch
-D   D      D = Diamond
-G G G      G = Glowstone Dust
+ A       A = Amethyst Cluster
+ S       S = Stick
+ S
 ```
 
-Yields 1 Interdiction Torch. The centre slot is empty; the original recipe uses a Philosopher's Stone there.
+Yields 1 Interdiction Torch. The cluster occupies the top slot, the two sticks are stacked vertically below.
 
 ## Building from source
 
@@ -93,4 +93,5 @@ from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
 

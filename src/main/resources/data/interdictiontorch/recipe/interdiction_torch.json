@@ -2,14 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "D": "minecraft:diamond",
-    "G": "minecraft:glowstone_dust",
-    "R": "minecraft:redstone_torch"
+    "A": "minecraft:amethyst_cluster",
+    "S": "minecraft:stick"
   },
   "pattern": [
-    "RDR",
-    "D D",
-    "GGG"
+    " A ",
+    " S ",
+    " S "
   ],
   "result": {
     "count": 1,
