@@ -19,13 +19,13 @@ import net.minecraft.world.phys.Vec3;
  */
 public class InterdictionTorchBlockEntity extends BlockEntity {
 	/** 作用半径，单位为格。 */
-	public static final double RADIUS = 8.0;
+	public static final double RADIUS = 12.0;
 	/** 力场边缘的向外目标速度，单位为格每 tick。 */
-	private static final double PUSH_SPEED_EDGE = 0.35;
+	private static final double PUSH_SPEED_EDGE = 0.50;
 	/** 火把中心的向外目标速度，单位为格每 tick。 */
-	private static final double PUSH_SPEED_CENTER = 0.75;
+	private static final double PUSH_SPEED_CENTER = 1.05;
 	/** 靠近火把时施加的向上速度，单位为格每 tick。 */
-	private static final double HOP_SPEED = 0.16;
+	private static final double HOP_SPEED = 0.20;
 
 	public InterdictionTorchBlockEntity(BlockPos pos, BlockState state) {
 		super(ModBlockEntities.INTERDICTION_TORCH, pos, state);
