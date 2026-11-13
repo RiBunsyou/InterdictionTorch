@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "interdictiontorchstandalone:item/interdiction_torch"
+  }
+}
+

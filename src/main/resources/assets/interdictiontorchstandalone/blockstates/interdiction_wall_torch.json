@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "interdictiontorchstandalone:block/interdiction_wall_torch"
+    },
+    "facing=north": {
+      "model": "interdictiontorchstandalone:block/interdiction_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "interdictiontorchstandalone:block/interdiction_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "interdictiontorchstandalone:block/interdiction_wall_torch",
+      "y": 180
+    }
+  }
+}
+

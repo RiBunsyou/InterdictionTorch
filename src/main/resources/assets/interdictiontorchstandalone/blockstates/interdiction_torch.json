@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "interdictiontorchstandalone:block/interdiction_torch"
+    }
+  }
+}
+

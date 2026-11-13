@@ -1,6 +1,7 @@
 {
   "values": [
-    "interdictiontorch:interdiction_torch",
-    "interdictiontorch:interdiction_wall_torch"
+    "interdictiontorchstandalone:interdiction_torch",
+    "interdictiontorchstandalone:interdiction_wall_torch"
   ]
 }
+

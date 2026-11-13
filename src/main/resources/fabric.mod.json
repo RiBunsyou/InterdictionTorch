@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "interdictiontorch",
+	"id": "interdictiontorchstandalone",
 	"version": "${version}",
 	"name": "Interdiction Torch Standalone",
 	"description": "禁止火把：来自等价交换（Equivalent Exchange）的经典道具。放置后形成力场，推开周围的敌对生物、偏转弹射物，光照等级与原版火把相同。",
@@ -12,14 +12,14 @@
 		"sources": "https://github.com/RiBunsyou/InterdictionTorchStandalone"
 	},
 	"license": "MIT",
-	"icon": "assets/interdictiontorch/icon.png",
+	"icon": "assets/interdictiontorchstandalone/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.ribu.interdictiontorch.InterdictionTorch"
+			"com.ribu.interdictiontorchstandalone.InterdictionTorch"
 		],
 		"client": [
-			"com.ribu.interdictiontorch.client.InterdictionTorchClient"
+			"com.ribu.interdictiontorchstandalone.client.InterdictionTorchClient"
 		]
 	},
 	"depends": {
@@ -29,6 +29,7 @@
 		"fabric-api": "*"
 	}
 }
+
 
 
 

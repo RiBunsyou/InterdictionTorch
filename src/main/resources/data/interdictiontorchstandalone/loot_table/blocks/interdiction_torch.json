@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "interdictiontorchstandalone:interdiction_torch"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "interdictiontorchstandalone:blocks/interdiction_torch"
+}
+

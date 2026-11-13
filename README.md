@@ -48,7 +48,7 @@ Yields 1 Interdiction Torch. The cluster occupies the top slot, the two sticks a
 .\gradlew build
 ```
 
-The artifact is written to `build/libs/InterdictionTorch-<version>.jar`.
+The artifact is written to `build/libs/InterdictionTorchStandalone-<version>.jar`.
 
 Development client:
 
@@ -59,7 +59,7 @@ Development client:
 ## Project layout
 
 ```
-src/main/java/com/ribu/interdictiontorch/
+src/main/java/com/ribu/interdictiontorchstandalone/
 ├── InterdictionTorch.java            Mod entrypoint
 ├── ModBlocks.java                    Block registration
 ├── ModBlockEntities.java             Block entity type registration
@@ -70,7 +70,7 @@ src/main/java/com/ribu/interdictiontorch/
     ├── InterdictionWallTorchBlock.java       Wall torch
     └── InterdictionTorchBlockEntity.java     Force field logic
 
-src/client/java/com/ribu/interdictiontorch/client/
+src/client/java/com/ribu/interdictiontorchstandalone/client/
 ├── InterdictionTorchClient.java      Client entrypoint
 └── particle/InterdictionFlameParticle.java
 ```
@@ -92,6 +92,8 @@ from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
+
 
 
 

@@ -48,7 +48,7 @@
 .\gradlew build
 ```
 
-产物位于 `build/libs/InterdictionTorch-<version>.jar`。
+产物位于 `build/libs/InterdictionTorchStandalone-<version>.jar`。
 
 开发环境客户端：
 
@@ -59,7 +59,7 @@
 ## 项目结构
 
 ```
-src/main/java/com/ribu/interdictiontorch/
+src/main/java/com/ribu/interdictiontorchstandalone/
 ├── InterdictionTorch.java            主入口
 ├── ModBlocks.java                    方块注册
 ├── ModBlockEntities.java             方块实体注册
@@ -70,7 +70,7 @@ src/main/java/com/ribu/interdictiontorch/
     ├── InterdictionWallTorchBlock.java       贴墙火把
     └── InterdictionTorchBlockEntity.java     力场逻辑
 
-src/client/java/com/ribu/interdictiontorch/client/
+src/client/java/com/ribu/interdictiontorchstandalone/client/
 ├── InterdictionTorchClient.java      客户端入口
 └── particle/InterdictionFlameParticle.java
 ```
@@ -91,6 +91,8 @@ Minecraft 26.1 起官方发行版不再混淆，Fabric 同时停止维护 Yarn �
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
+
 
 
 
