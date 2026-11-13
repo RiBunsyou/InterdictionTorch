@@ -2,6 +2,9 @@ plugins {
 	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 }
 
+// jar 文件名与模组元数据版本都带上适用游戏版本，形如 0.1.0+26.3
+version = "${project.mod_version}+${project.minecraft_version}"
+
 loom {
 	// 分离客户端与服务端源码集，客户端代码位于 src/client
 	splitEnvironmentSourceSets()
@@ -45,4 +48,5 @@ java {
 	sourceCompatibility = JavaVersion.VERSION_25
 	targetCompatibility = JavaVersion.VERSION_25
 }
+
 
