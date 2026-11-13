@@ -3,7 +3,7 @@ package com.ribu.interdictiontorchstandalone.block;
 import com.ribu.interdictiontorchstandalone.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -41,7 +41,7 @@ public class InterdictionTorchBlockEntity extends BlockEntity {
 		AABB area = new AABB(pos).inflate(RADIUS);
 
 		for (Entity entity : level.getEntitiesOfClass(Entity.class, area)) {
-			if (entity instanceof Monster) {
+			if (entity instanceof Enemy) {
 				pushAway(entity, center);
 			} else if (entity instanceof Projectile) {
 				deflect(entity, center);
@@ -109,4 +109,5 @@ public class InterdictionTorchBlockEntity extends BlockEntity {
 		projectile.needsSync = true;
 	}
 }
+
 
