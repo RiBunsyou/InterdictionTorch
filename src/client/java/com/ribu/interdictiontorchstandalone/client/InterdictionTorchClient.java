@@ -6,8 +6,8 @@ import com.ribu.interdictiontorchstandalone.client.particle.InterdictionFlamePar
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry.PendingParticleProvider;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
+import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.network.chat.Component;
@@ -34,11 +34,10 @@ public class InterdictionTorchClient implements ClientModInitializer {
 	 */
 	private static void registerBuiltinPacks() {
 		FabricLoader.getInstance().getModContainer(InterdictionTorch.MOD_ID).ifPresent(container ->
-				ResourceManagerHelper.registerBuiltinResourcePack(
+				ResourceLoader.registerBuiltinPack(
 						InterdictionTorch.id("hd"),
 						container,
 						Component.translatable("resourcepack.interdictiontorchstandalone.hd"),
-						ResourcePackActivationType.NORMAL));
+						PackActivationType.NORMAL));
 	}
 }
-
