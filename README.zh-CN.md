@@ -2,9 +2,9 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-《等价交换》中禁止火把的 Fabric 移植版本。放置后生成力场，将敌对生物推开并偏转弹射物。
+《等价交换》中禁止火把的独立 Fabric 实现。放置后生成力场，将敌对生物推开并偏转弹射物。
 
-![贴图预览](docs/preview.png)
+![Interdiction Torch Standalone](docs/banner-1280x720.png)
 
 ## 特性
 
@@ -88,9 +88,15 @@ Minecraft 26.1 起官方发行版不再混淆，Fabric 同时停止维护 Yarn �
 
 模组内置一套可选的 128× 贴图包，默认关闭，可在资源包界面启用。启用后提供漫反射、法线与 LabPBR 高光贴图。
 
+![贴图对比](docs/gallery-textures-1280x720.png)
+
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
+
+
+
 
 
 

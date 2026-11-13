@@ -2,9 +2,9 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A Fabric port of the Interdiction Torch from Equivalent Exchange. Creates a force field that pushes hostile mobs away and deflects projectiles.
+A standalone Fabric implementation of the Interdiction Torch from Equivalent Exchange. Creates a force field that pushes hostile mobs away and deflects projectiles.
 
-![Texture preview](docs/preview.png)
+![Interdiction Torch Standalone](docs/banner-1280x720.png)
 
 ## Features
 
@@ -89,9 +89,14 @@ light level, sound, piston and fluid reactions, loot tables, the `wall_post_over
 The mod ships an optional 128x texture pack as a built-in pack. It is disabled by default and can be enabled
 from the resource pack screen; it adds diffuse, normal and LabPBR specular maps.
 
+![Texture variants](docs/gallery-textures-1280x720.png)
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
+
+
 
 
 
